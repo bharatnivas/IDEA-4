@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Meridian Fingers – Construction & Civil Contract</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════
+   ROOT & RESET
+═══════════════════════════════════════════ */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --red:    #C0392B;
+  --blue:   #1B3A6B;
+  --navy:   #1A2A4A;
+  --teal:   #1E6B5E;
+  --purple: #5B2D8E;
+  --orange: #D35400;
+  --sky:    #D6E8F7;
+  --white:  #ffffff;
+  --light:  #F4F6FA;
+  --border: #D8DCE8;
+  --text:   #1A1A2E;
+  --muted:  #5A6070;
+  --page-bg: #EEF1F7;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   PAGE WRAPPER
+═══════════════════════════════════════════ */
+.page {
+  width: 900px;
+  margin: 32px auto;
+  background: var(--white);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+  border-radius: 4px;
+  overflow: hidden;
+  page-break-after: always;
+}
+
+/* ═══════════════════════════════════════════
+   SHARED: TOP HEADER (all pages)
+═══════════════════════════════════════════ */
+.page-header {
+  background: var(--sky);
+  padding: 18px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 3px solid var(--red);
+}
+
+.header-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  background: #ccc;
+}
+.header-logo img { width:100%; height:100%; object-fit:cover; }
+
+.header-brand { flex:1; }
+
+.header-brand .company-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.header-brand .company-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 3px;
+}
+
+.header-brand .tagline {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.header-brand .badge-row {
+  margin-top: 8px;
+}
+
+.hbadge {
+  display: inline-block;
+  background: var(--blue);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 4px 14px;
+  border-radius: 3px;
+}
+
+.header-contact {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.header-contact .hc-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.header-contact .hc-phone {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 3px;
+}
+
+.header-contact .hc-email {
+  font-size: 12px;
+  color: var(--blue);
+  text-decoration: none;
+  margin-top: 2px;
+}
+
+.header-contact .hc-loc {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ─── Red info bar ─── */
+.info-bar {
+  background: var(--red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 9px 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-bar span { opacity: 0.85; }
+.info-bar b { opacity: 1; }
+
+/* ═══════════════════════════════════════════
+   PAGE 1 — STATS + ABOUT + SERVICES
+═══════════════════════════════════════════ */
+
+/* Stats row */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 2px solid var(--border);
+}
+
+.stat-cell {
+  padding: 16px 10px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-cell:last-child { border-right: none; }
+
+.stat-cell .snum {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+}
+
+.stat-cell .slbl {
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Section heading */
+.sec-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--red);
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+/* Body content area */
+.page-body { padding: 24px 32px; }
+
+/* About */
+.about-text {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* Services table */
+.svc-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.svc-table thead tr {
+  background: var(--navy);
+}
+
+.svc-table thead th {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 9px 16px;
+  text-align: left;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.svc-table thead th:last-child { border-right: none; }
+
+.svc-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+.svc-table tbody tr:last-child { border-bottom: none; }
+.svc-table tbody tr:nth-child(even) { background: var(--light); }
+.svc-table tbody tr:hover { background: #E8EDF6; }
+
+.svc-table tbody td {
+  padding: 10px 16px;
+  font-size: 12.5px;
+  color: var(--text);
+  border-right: 1px solid var(--border);
+  vertical-align: middle;
+}
+.svc-table tbody td:last-child { border-right: none; }
+
+.svc-code-badge {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+.svc-table tbody td .svc-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ═══════════════════════════════════════════
+   SHARED: PAGE FOOTER
+═══════════════════════════════════════════ */
+.page-footer {
+  background: var(--navy);
+  padding: 11px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pf-left {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+.pf-left span {
+  display: block;
+  font-weight: 400;
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 1px;
+}
+
+.pf-mid {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.pf-right {
+  text-align: right;
+}
+.pf-gst {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 3px 12px;
+  border-radius: 3px;
+}
+.pf-page {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 3px;
+}
+
+/* ═══════════════════════════════════════════
+   PAGE 2 — PROJECT HEADER (special layout)
+═══════════════════════════════════════════ */
+.p2-header {
+  background: var(--sky);
+  padding: 20px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 3px solid var(--red);
+}
+
+.p2-header .header-logo {
+  width: 72px;
+  height: 72px;
+}
+
+.p2-title-block { flex:1; }
+
+.p2-title-block .big {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.p2-title-block .sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Red banner: PROJECT EXPERIENCE */
+.proj-banner {
+  background: var(--red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 8px 32px;
+  text-transform: uppercase;
+}
+
+/* 2-column project grid */
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 20px 32px;
+}
+
+.proj-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.proj-card-header {
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.proj-thumb {
+  width: 90px;
+  min-height: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+.proj-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.proj-thumb-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.45);
+  text-align: center;
+  padding: 3px 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.5px;
+}
+
+.proj-title-area {
+  flex: 1;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ptitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.prole {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.proj-scope {
+  background: var(--light);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 6px 14px;
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.proj-bullets {
+  padding: 10px 14px;
+  list-style: none;
+}
+
+.proj-bullets li {
+  font-size: 11.5px;
+  color: #333;
+  padding: 2.5px 0 2.5px 14px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.proj-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: bold;
+}
+
+.ph-blue  .proj-card-header { background: #EAF0FA; border-bottom: 2px solid var(--blue); }
+.ph-blue  .proj-thumb       { background: #c8d8f0; }
+.ph-blue  .ptitle           { color: var(--blue); }
+
+.ph-red   .proj-card-header { background: #FAEAE8; border-bottom: 2px solid var(--red); }
+.ph-red   .proj-thumb       { background: #f5d0cc; }
+.ph-red   .ptitle           { color: var(--red); }
+
+.ph-teal  .proj-card-header { background: #E5F5F2; border-bottom: 2px solid var(--teal); }
+.ph-teal  .proj-thumb       { background: #b8ddd7; }
+.ph-teal  .ptitle           { color: var(--teal); }
+
+.ph-purple .proj-card-header { background: #F0EAF8; border-bottom: 2px solid var(--purple); }
+.ph-purple .proj-thumb       { background: #d8c8ee; }
+.ph-purple .ptitle           { color: var(--purple); }
+
+.ph-orange .proj-card-header { background: #FDF0E6; border-bottom: 2px solid var(--orange); }
+.ph-orange .proj-thumb       { background: #f5d0aa; }
+.ph-orange .ptitle           { color: var(--orange); }
+
+.ph-navy .proj-card-header { background: #E6EAF2; border-bottom: 2px solid var(--navy); }
+.ph-navy .proj-thumb       { background: #b8c4d8; }
+.ph-navy .ptitle           { color: var(--navy); }
+
+
+/* ═══════════════════════════════════════════
+   PAGE 3 — RECENT PROJECTS + STRENGTHS
+═══════════════════════════════════════════ */
+.p3-header {
+  background: var(--sky);
+  padding: 14px 32px 12px;
+  border-bottom: 3px solid var(--red);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p3-header .p3-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--red);
+}
+.p3-header .p3-sub {
+  font-size: 11px;
+  color: var(--blue);
+  font-weight: 600;
+  margin-top: 2px;
+}
+.p3-header .p3-contact {
+  text-align: right;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.p3-header .p3-contact b { color: var(--text); }
+
+/* P3 projects: left text + right image strip */
+.p3-proj {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.p3-proj-left {
+  padding: 16px 20px 16px 32px;
+  border-right: 1px solid var(--border);
+}
+
+.p3-proj-right {
+  padding: 16px 32px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.p3-proj-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.p3-proj-right-imgs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.p3-proj-right-imgs img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.p3-role-dur {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.p3-scope {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+/* Strengths section */
+.strengths-section {
+  padding: 20px 32px;
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.str-cell {
+  text-align: center;
+  padding: 14px 8px;
+  background: var(--light);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.str-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+}
+
+.str-lbl {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.35;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     PAGE 1
+══════════════════════════════════════════ -->
+<div class="page" id="page1">
+
+  <!-- Header -->
+  <div class="page-header">
+    <div class="header-logo">
+      <img src="https://picsum.photos/seed/mflogo/72/72" alt="Logo"/>
+    </div>
+    <div class="header-brand">
+      <div class="company-name">MERIDIAN FINGERS</div>
+      <div class="company-sub">Construction &amp; Civil Contract</div>
+      <div class="tagline">"Building Infrastructure with Precision &amp; Trust"</div>
+      <div class="badge-row">
+        <span class="hbadge">GST Registered · Est. 2011</span>
+      </div>
+    </div>
+    <div class="header-contact">
+      <div class="hc-name">M. KamalaKannan</div>
+      <div class="hc-phone">89394 44144 / 76309 44421</div>
+      <div class="hc-email">meridianfingers@gmail.com</div>
+      <div class="hc-loc">Ranipet, Tamil Nadu</div>
+    </div>
+  </div>
+
+  <!-- Info bar -->
+  <div class="info-bar">
+    <span>meridianfingers@gmail.com</span>
+    <b>|</b>
+    <span>89394 44144 / 76309 44421</span>
+    <b>|</b>
+    <span>GSTIN: 33ABQFM0878H1ZX</span>
+  </div>
+
+  <!-- Stats row -->
+  <div class="stats-row">
+    <div class="stat-cell"><div class="snum">10+</div><div class="slbl">Years Experience</div></div>
+    <div class="stat-cell"><div class="snum">7+</div><div class="slbl">Projects Executed</div></div>
+    <div class="stat-cell"><div class="snum">2000+</div><div class="slbl">Buildings Valued</div></div>
+    <div class="stat-cell"><div class="snum">Pan India</div><div class="slbl">Project Reach</div></div>
+    <div class="stat-cell"><div class="snum">Est. 2011</div><div class="slbl">Since</div></div>
+  </div>
+
+  <!-- Body -->
+  <div class="page-body">
+
+    <!-- About -->
+    <div class="sec-title">About Us</div>
+    <div class="about-text">
+      MERIDIAN FINGERS is a professionally managed construction and civil contracting firm with extensive experience in large-scale
+      infrastructure and industrial projects across India. Since 2011, we have been consistently delivering high-quality works as a
+      trusted vendor and subcontractor for reputed organizations in sectors including industrial construction, highways, airports, and
+      energy projects. Our commitment to quality, safety, and timely execution has enabled us to successfully complete diverse and
+      challenging projects.
+    </div>
+
+    <!-- Services -->
+    <div class="sec-title">Our Services</div>
+    <table class="svc-table">
+      <thead>
+        <tr>
+          <th style="width:40px;">#</th>
+          <th>Service</th>
+          <th style="width:40px;">#</th>
+          <th>Service</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--blue);">1</td>
+          <td><span class="svc-label">Industrial &amp; Factory Construction</span></td>
+          <td style="text-align:center;font-weight:700;color:var(--blue);">5</td>
+          <td><span class="svc-label">Surveying (DGPS)</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--blue);">2</td>
+          <td><span class="svc-label">RCC &amp; Structural Works</span></td>
+          <td style="text-align:center;font-weight:700;color:var(--blue);">6</td>
+          <td><span class="svc-label">Scaffolding Works</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--blue);">3</td>
+          <td><span class="svc-label">Excavation &amp; Earthwork</span></td>
+          <td style="text-align:center;font-weight:700;color:var(--blue);">7</td>
+          <td><span class="svc-label">Valuation &amp; Inspection Services</span></td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:700;color:var(--blue);">4</td>
+          <td><span class="svc-label">Highway &amp; Drainage Works</span></td>
+          <td style="text-align:center;font-weight:700;color:var(--blue);">8</td>
+          <td><span class="svc-label">Labour Supply &amp; Project Execution</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <div class="pf-left">MERIDIAN FINGERS
+      <span>Construction &amp; Civil Contract · 113, Ammoor Koot Road, Ranipet – 632 501</span>
+    </div>
+    <div class="pf-mid">GSTIN: 33ABQFM0878H1ZX<br/>meridianfingers@gmail.com</div>
+    <div class="pf-right">
+      <div class="pf-gst">GST Registered</div>
+      <div class="pf-page">Page 1 of 3</div>
+    </div>
+  </div>
+
+</div><!-- /page1 -->
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 2
+══════════════════════════════════════════ -->
+<div class="page" id="page2">
+
+  <!-- Special P2 header -->
+  <div class="p2-header">
+    <div class="header-logo">
+      <img src="https://picsum.photos/seed/mflogo/72/72" alt="Logo"/>
+    </div>
+    <div class="p2-title-block">
+      <div class="big">OUR PROJECTS &amp;<br/>EXPERIENCE</div>
+      <div class="sub">Real Works · Verified Execution · Reputed Clients</div>
+    </div>
+    <div class="header-contact">
+      <div class="hc-name">M. KamalaKannan</div>
+      <div class="hc-phone">89394 44144 / 76309 44421</div>
+      <div class="hc-email">meridianfingers@gmail.com</div>
+      <div class="hc-loc">Ranipet, Tamil Nadu</div>
+    </div>
+  </div>
+
+  <!-- Project banner -->
+  <div class="proj-banner">Project Experience — Industrial · Highway · Infrastructure</div>
+
+  <!-- Project cards 2-col grid -->
+  <div class="proj-grid">
+
+    <!-- P-1 -->
+    <div class="proj-card ph-blue">
+      <div class="proj-card-header">
+        <div class="proj-thumb">
+          <img src="https://picsum.photos/seed/michelintyre/90/90" alt="Michelin Tyre Factory"/>
+          <div class="proj-thumb-overlay">Michelin Tyre Factory</div>
+        </div>
+        <div class="proj-title-area">
+          <div class="ptitle">Michelin Tyre Factory</div>
+          <div class="prole">Vendor · 2011 – 2014</div>
+        </div>
+      </div>
+      <div class="proj-scope">55 Buildings, Utility Structures, Roads &amp; Rainwater Harvesting</div>
+      <ul class="proj-bullets">
+        <li>Executed 55+ industrial buildings &amp; utility structures</li>
+        <li>Delivered internal roads &amp; rainwater harvesting systems</li>
+        <li>Managed multi-activity execution in high-standard environment</li>
+        <li>Strict quality control for all structural &amp; civil works</li>
+        <li>Coordinated multiple teams for timely project completion</li>
+      </ul>
+    </div>
+
+    <!-- P-2 -->
+    <div class="proj-card ph-red">
+      <div class="proj-card-header">
+        <div class="proj-thumb">
+          <img src="https://picsum.photos/seed/mondelezfactory/90/90" alt="Mondelez Factory"/>
+          <div class="proj-thumb-overlay">Mondelez Factory</div>
+        </div>
+        <div class="proj-title-area">
+          <div class="ptitle">Mondelez Factory, Sri City</div>
+          <div class="prole">Vendor · 2014 – 2016</div>
+        </div>
+      </div>
+      <div class="proj-scope">Factory Construction Works, Tada, Andhra Pradesh</div>
+      <ul class="proj-bullets">
+        <li>Executed civil &amp; structural works for food processing facility</li>
+        <li>Delivered foundation, flooring &amp; utility structures to standards</li>
+        <li>Ensured high accuracy in alignment &amp; finishing of factory components</li>
+        <li>Maintained safety &amp; quality compliance throughout duration</li>
+        <li>Supported production readiness through coordinated civil works</li>
+      </ul>
+    </div>
+
+    <!-- P-3 -->
+    <div class="proj-card ph-teal">
+      <div class="proj-card-header">
+        <div class="proj-thumb">
+          <img src="https://picsum.photos/seed/nhaihighway/90/90" alt="NHAI Highway"/>
+          <div class="proj-thumb-overlay">NHAI Highway</div>
+        </div>
+        <div class="proj-title-area">
+          <div class="ptitle">NHAI Highway Project</div>
+          <div class="prole">Vendor – Agroh Infrastructures · 2017 – 2019</div>
+        </div>
+      </div>
+      <div class="proj-scope">Survey &amp; Drainage Works, Jalgaon to Dhule – Package 2</div>
+      <ul class="proj-bullets">
+        <li>Performed detailed survey ensuring alignment accuracy</li>
+        <li>Executed drainage systems for effective water management</li>
+        <li>Maintained levels &amp; gradients as per NHAI specifications</li>
+        <li>Coordinated with project teams for smooth field activities</li>
+        <li>Delivered works to national highway quality standards</li>
+      </ul>
+    </div>
+
+    <!-- P-4 -->
+    <div class="proj-card ph-purple">
+      <div class="proj-card-header">
+        <div class="proj-thumb">
+          <img src="https://picsum.photos/seed/flyoverbridge/90/90" alt="Elevated Flyover"/>
+          <div class="proj-thumb-overlay">Elevated Flyover</div>
+        </div>
+        <div class="proj-title-area">
+          <div class="ptitle">Elevated Highway / Flyover</div>
+          <div class="prole">Vendor – RDS Projects Ltd · 2019 – 2020</div>
+        </div>
+      </div>
+      <div class="proj-scope">DGPS Survey &amp; Pier Construction</div>
+      <ul class="proj-bullets">
+        <li>Conducted DGPS survey for precise layout &amp; positioning</li>
+        <li>Supported pier construction with accurate structural alignment</li>
+        <li>Ensured execution as per design drawings &amp; specifications</li>
+        <li>Maintained strict safety standards during elevated works</li>
+        <li>Achieved timely completion through efficient site coordination</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <div class="pf-left">MERIDIAN FINGERS
+      <span>Construction &amp; Civil Contract · 113, Ammoor Koot Road, Ranipet – 632 501</span>
+    </div>
+    <div class="pf-mid">GSTIN: 33ABQFM0878H1ZX<br/>meridianfingers@gmail.com</div>
+    <div class="pf-right">
+      <div class="pf-gst">GST Registered</div>
+      <div class="pf-page">Page 2 of 3</div>
+    </div>
+  </div>
+
+</div><!-- /page2 -->
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 3
+══════════════════════════════════════════ -->
+<div class="page" id="page3">
+
+  <!-- P3 compact header -->
+  <div class="p3-header">
+    <div>
+      <div class="p3-brand">MERIDIAN FINGERS</div>
+      <div class="p3-sub">Construction &amp; Civil Contract · Recent Project Works</div>
+    </div>
+    <div class="p3-contact">
+      <b>89394 44144</b> | meridianfingers@gmail.com<br/>
+      Ranipet, Tamil Nadu | GSTIN: 33ABQFM0878H1ZX
+    </div>
+  </div>
+
+  <!-- Red project banner -->
+  <div class="proj-banner">Recent Projects — P5 · P6 · P7</div>
+
+  <!-- P-5: NHAI Valuation -->
+  <div class="p3-proj">
+    <div class="p3-proj-left">
+      <div class="p3-proj-header" style="display:flex;align-items:stretch;gap:0;margin-bottom:8px;border-radius:4px;overflow:hidden;border:1px solid var(--border);">
+        <div style="width:80px;min-height:70px;flex-shrink:0;overflow:hidden;position:relative;">
+          <img src="https://picsum.photos/seed/buildingvaluation/80/70" alt="NHAI Valuation" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(211,84,0,0.75);text-align:center;padding:2px;font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;color:#fff;">NHAI Valuation</div>
+        </div>
+        <div style="flex:1;padding:10px 12px;background:#FDF0E6;">
+          <div class="ptitle" style="color:var(--orange);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;">NHAI Valuation Works</div>
+          <div class="prole" style="font-size:11px;color:var(--muted);">Role: NHAI Consultant · Duration: 2021 – 2023</div>
+        </div>
+      </div>
+      <div class="p3-scope">Scope: Valuation of ~2000+ Buildings across project areas</div>
+      <ul class="proj-bullets">
+        <li>Conducted valuation of 2000+ buildings to NHAI standards</li>
+        <li>Accurate data collection &amp; documentation as per norms</li>
+        <li>Delivered detailed assessment reports with high reliability</li>
+        <li>Coordinated with officials &amp; stakeholders for execution</li>
+        <li>Maintained consistency &amp; precision in large-scale process</li>
+      </ul>
+    </div>
+    <div class="p3-proj-right">
+      <div class="p3-proj-right-imgs">
+        <img src="https://picsum.photos/seed/val1/120/120" alt="Valuation site 1"/>
+        <img src="https://picsum.photos/seed/val2/120/120" alt="Valuation site 2"/>
+        <img src="https://picsum.photos/seed/val3/120/120" alt="Valuation site 3"/>
+      </div>
+      <div class="p3-proj-right-imgs">
+        <img src="https://picsum.photos/seed/val4/120/120" alt="Valuation site 4"/>
+        <img src="https://picsum.photos/seed/val5/120/120" alt="Valuation site 5"/>
+        <img src="https://picsum.photos/seed/val6/120/120" alt="Valuation site 6"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- P-6: Airport -->
+  <div class="p3-proj">
+    <div class="p3-proj-left">
+      <div class="p3-proj-header" style="display:flex;align-items:stretch;gap:0;margin-bottom:8px;border-radius:4px;overflow:hidden;border:1px solid var(--border);">
+        <div style="width:80px;min-height:70px;flex-shrink:0;overflow:hidden;position:relative;">
+          <img src="https://picsum.photos/seed/airportconstruction/80/70" alt="Airport Project" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(27,58,107,0.75);text-align:center;padding:2px;font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;color:#fff;">Airport Project</div>
+        </div>
+        <div style="flex:1;padding:10px 12px;background:#EAF0FA;">
+          <div class="ptitle" style="color:var(--blue);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;">Tata International Airport Project</div>
+          <div class="prole" style="font-size:11px;color:var(--muted);">Role: Vendor · Duration: Mar 2025 – Aug 2025</div>
+        </div>
+      </div>
+      <div class="p3-scope">Scope: 40,000 m³ Excavation Works</div>
+      <ul class="proj-bullets">
+        <li>Large-scale excavation (~40,000 m³) executed efficiently</li>
+        <li>Managed manpower &amp; machinery for high-volume earthwork</li>
+        <li>Maintained depth &amp; level accuracy throughout excavation</li>
+        <li>Followed strict safety standards in high-security zone</li>
+      </ul>
+    </div>
+    <div class="p3-proj-right">
+      <div class="p3-proj-right-imgs">
+        <img src="https://picsum.photos/seed/air1/120/120" alt="Airport excavation 1"/>
+        <img src="https://picsum.photos/seed/air2/120/120" alt="Airport excavation 2"/>
+        <img src="https://picsum.photos/seed/air3/120/120" alt="Airport excavation 3"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- P-7: Exide Energy -->
+  <div class="p3-proj" style="border-bottom:none;">
+    <div class="p3-proj-left">
+      <div class="p3-proj-header" style="display:flex;align-items:stretch;gap:0;margin-bottom:8px;border-radius:4px;overflow:hidden;border:1px solid var(--border);">
+        <div style="width:80px;min-height:70px;flex-shrink:0;overflow:hidden;position:relative;">
+          <img src="https://picsum.photos/seed/scaffoldingworks/80/70" alt="Exide Energy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(30,107,94,0.75);text-align:center;padding:2px;font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;color:#fff;">Exide Energy</div>
+        </div>
+        <div style="flex:1;padding:10px 12px;background:#E5F5F2;">
+          <div class="ptitle" style="color:var(--teal);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;">Exide Energy Project, Devanahalli</div>
+          <div class="prole" style="font-size:11px;color:var(--muted);">PMC – STALLION UNIVERSAL INDIA PVT LTD · Sep 2025 – Jan 2026</div>
+        </div>
+      </div>
+      <div class="p3-scope">Scope: Scaffolding Works &amp; Civil Works</div>
+      <ul class="proj-bullets">
+        <li>Executed scaffolding ensuring structural safety &amp; access</li>
+        <li>Supported civil works under PMC with coordinated execution</li>
+        <li>Maintained industrial safety standards throughout project</li>
+      </ul>
+    </div>
+    <div class="p3-proj-right">
+      <div class="p3-proj-right-imgs">
+        <img src="https://picsum.photos/seed/exide1/120/120" alt="Exide scaffolding 1"/>
+        <img src="https://picsum.photos/seed/exide2/120/120" alt="Exide scaffolding 2"/>
+        <img src="https://picsum.photos/seed/exide3/120/120" alt="Exide scaffolding 3"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Strengths -->
+  <div class="strengths-section">
+    <div class="sec-title">Our Strengths</div>
+    <div class="strengths-grid">
+      <div class="str-cell"><div class="str-num">10+</div><div class="str-lbl">Years Experience</div></div>
+      <div class="str-cell"><div class="str-num" style="font-size:13px;">Large‑Scale</div><div class="str-lbl">Projects Executed</div></div>
+      <div class="str-cell"><div class="str-num" style="font-size:13px;">Skilled</div><div class="str-lbl">Workforce &amp; Expertise</div></div>
+      <div class="str-cell"><div class="str-num" style="font-size:13px;">Quality &amp;</div><div class="str-lbl">Safety Standards</div></div>
+      <div class="str-cell"><div class="str-num" style="font-size:13px;">Timely</div><div class="str-lbl">Project Delivery</div></div>
+      <div class="str-cell"><div class="str-num" style="font-size:13px;">Reputed</div><div class="str-lbl">Clients &amp; Consultants</div></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <div class="pf-left">MERIDIAN FINGERS
+      <span>Construction &amp; Civil Contract · 113, Ammoor Koot Road, Ranipet – 632 501</span>
+    </div>
+    <div class="pf-mid">GSTIN: 33ABQFM0878H1ZX | meridianfingers@gmail.com<br/>Construction &amp; Civil Contract</div>
+    <div class="pf-right">
+      <div class="pf-gst">GST Registered</div>
+      <div class="pf-page">Page 3 of 3</div>
+    </div>
+  </div>
+
+</div><!-- /page3 -->
+
+</body>
+</html>
